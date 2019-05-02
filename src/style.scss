@@ -1,0 +1,215 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+/*
+  Variables
+*/
+$breakpoint-sm: 600px;
+$breakpoint-md: 782px;
+
+$gutters-sm: 1rem;
+$gutters-lg: 2rem;
+$padding-sm: 1rem;
+$padding-lg: 2rem;
+
+
+/*
+  Mixins
+*/
+@mixin media-breakpoint-up($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  } 
+}
+
+/*
+  Row Base
+*/
+.vb-row {
+  flex-wrap:wrap;
+  display:flex;
+}
+
+.vb-row--center {
+  justify-content:center;
+}
+
+/*
+  Row Gutters
+*/
+.vb-row--gutters-sm {
+  margin-left:-$gutters-sm;
+  margin-right:-$gutters-sm;
+}
+.vb-row--gutters-sm > .vb-col {
+  padding-left:$gutters-sm;
+  padding-right:$gutters-sm;
+}
+.vb-row--gutters-lg {
+  margin-left:-$gutters-lg;
+  margin-right:-$gutters-lg;
+}
+.vb-row--gutters-lg > .vb-col {
+  padding-left:$gutters-lg;
+  padding-right:$gutters-lg;
+}
+
+/*
+  Column base
+*/
+.vb-col {
+  display:flex;
+  flex-grow:1;
+  box-sizing:border-box;
+  width:100%;
+}
+
+.vb-col__inner {
+  width:100%;
+}
+
+/*
+  Column widths
+*/
+.vb-col--w-auto {
+  flex-basis:0;
+}
+.vb-col--w-1\/2 {
+  flex-basis:50%;
+  flex-grow:0;
+}
+.vb-col--w-1\/3 {
+  flex-basis:calc(100%/3);
+  flex-grow:0;
+}
+.vb-col--w-2\/3 {
+  flex-basis:calc(100%*2/3);
+  flex-grow:0;
+}
+.vb-col--w-1\/4 {
+  flex-basis:25%;
+  flex-grow:0;
+}
+.vb-col--w-3\/4 {
+  flex-basis:75%;
+  flex-grow:0;
+}
+.vb-col--w-full {
+  flex-basis:100%;
+}
+
+@include media-breakpoint-up($breakpoint-sm) {
+  .sm\:vb-col--w-auto {
+    flex-basis:0;
+    flex-grow:1;
+  }
+  .sm\:vb-col--w-1\/2 {
+    flex-basis:50%;
+    flex-grow:0;
+  }
+  .sm\:vb-col--w-1\/3 {
+    flex-basis:calc(100%/3);
+    flex-grow:0;
+  }
+  .sm\:vb-col--w-2\/3 {
+    flex-basis:calc(100%*2/3);
+    flex-grow:0;
+  }
+  .sm\:vb-col--w-1\/4 {
+    flex-basis:25%;
+    flex-grow:0;
+  }
+  .sm\:vb-col--w-3\/4 {
+    flex-basis:75%;
+    flex-grow:0;
+  }
+  .sm\:vb-col--w-full {
+    flex-basis:100%;
+  }
+}
+
+@include media-breakpoint-up($breakpoint-md) {
+  .md\:vb-col--w-auto {
+    flex-basis:0;
+    flex-grow:1;
+  }
+  .md\:vb-col--w-1\/2 {
+    flex-basis:50%;
+    flex-grow:0;
+  }
+  .md\:vb-col--w-1\/3 {
+    flex-basis:calc(100%/3);
+    flex-grow:0;
+  }
+  .md\:vb-col--w-2\/3 {
+    flex-basis:calc(100%*2/3);
+    flex-grow:0;
+  }
+  .md\:vb-col--w-1\/4 {
+    flex-basis:25%;
+    flex-grow:0;
+  }
+  .md\:vb-col--w-3\/4 {
+    flex-basis:75%;
+    flex-grow:0;
+  }
+  .md\:vb-col--w-full {
+    flex-basis:100%;
+  }
+}
+
+/*
+  Column Padding
+*/
+
+.vb-col--pad-sm .vb-col__inner {
+  padding:$padding-sm;
+}
+.vb-col--pad-lg .vb-col__inner {
+  padding:$padding-lg;
+}
+.vb-col--center > .vb-col__inner {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Images
+*/
+
+.vb-col__image > .wp-block-image {
+  margin: 0;
+}
+
+.vb-col--fit-cover,
+.vb-col--fit-contain,
+.vb-col--fit-fill,
+.vb-col--fit-scale-down,
+ {
+  .vb-col__inner,
+  .vb-col__image,
+  .wp-block-image {
+    height:100%;
+  }
+  img {
+    height:100%;
+    width:100%;
+  }
+}
+
+.vb-col--fit-cover img {
+  object-fit:cover;
+}
+.vb-col--fit-contain img {
+  object-fit:contain;
+}
+.vb-col--fit-scale-down img {
+  object-fit:scale-down;
+}
+.vb-col--fit-fill img {
+  object-fit:fill;
+}

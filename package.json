@@ -1,0 +1,17 @@
+{
+  "name": "vb-flex-columns",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build",
+    "eject": "cgb-scripts eject"
+  },
+  "dependencies": {
+    "cgb-scripts": "1.17.0",
+    "classnames": "^2.2.6"
+  },
+  "devDependencies": {
+    "prettier-eslint": "^8.8.2"
+  }
+}
