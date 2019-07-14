@@ -23,10 +23,6 @@ const { registerBlockType } = wp.blocks;
  */
 import edit from './column-edit';
 
-const supports = {
-	align: [ 'wide', 'full' ],
-};
-
 const schema = {
 	align: {
 		type: 'string',
@@ -86,7 +82,6 @@ export const settings = {
 		__( 'Flexbox' ),
 		__( 'Columns' ),
 	],
-	supports,
 	parent: [ 'vb/flex-row' ],
 	attributes: schema,
 	edit,

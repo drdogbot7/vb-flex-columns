@@ -22,7 +22,6 @@ const {
 } = wp.editor;
 const {
 	SelectControl,
-	ToggleControl,
 } = wp.components;
 
 /**
@@ -47,18 +46,21 @@ registerBlockType( 'vb/flex-row', {
 		__( 'Flexbox' ),
 		__( 'Columns' ),
 	],
+	supports: {
+		align: [ 'wide', 'full' ],
+	},
 	attributes: {
 		align: {
 			type: 'string',
-			default: 'full',
+			default: null,
 		},
 		gutters: {
 			type: 'string',
 			default: 'sm',
 		},
-		centerColumns: {
-			type: 'boolean',
-			default: false,			
+		justify: {
+			type: 'text',
+			default: null,
 		},
 	},
 
@@ -79,7 +81,7 @@ registerBlockType( 'vb/flex-row', {
 		} = props;
 		const {
 			gutters,
-			centerColumns,
+			justify,
 		} = props.attributes;
 
 		return (
@@ -97,15 +99,24 @@ registerBlockType( 'vb/flex-row', {
 							{ value: 'lg', label: 'Large Gutters' },
 						] }
 					/>
-					<ToggleControl
-						label={ __( 'Center columns' ) }
-						checked={ centerColumns }
-						onChange={ () => setAttributes( {
-							centerColumns: ! centerColumns,
+					<SelectControl
+						label={ __( 'Justify Columns' ) }
+						value={ justify }
+						onChange={ ( selection ) => setAttributes( {
+							justify: selection,
 						} ) }
+						options={ [
+							{ value: '', label: 'Not Set' },
+							{ value: 'center', label: 'Center' },
+							{ value: 'start', label: 'Start' },
+							{ value: 'end', label: 'End' },
+							{ value: 'between', label: 'Between' },
+							{ value: 'around', label: 'Around' },
+							{ value: 'evenly', label: 'Evenly' },
+						] }
 					/>
 				</InspectorControls>
-				<div className={ 'vb-row' }>
+				<div className={ '' }>
 					<InnerBlocks
 						allowedBlocks={ ALLOWED_BLOCKS }
 						template={ TEMPLATE }
@@ -126,14 +137,14 @@ registerBlockType( 'vb/flex-row', {
 	save: function( props ) {
 		const {
 			gutters,
-			centerColumns,
+			justify,
 		} = props.attributes;
 
 		return (
 			<div className={ classnames( 
 				'vb-row',
 				{ [ `vb-row--gutters-${ gutters }` ]: gutters },
-				{	'vb-row--center': centerColumns	}
+				{ [ `vb-row--justify-${ justify }` ]: justify },
 			) }>
 				<InnerBlocks.Content />
 			</div>

@@ -33,10 +33,6 @@ $padding-lg: 2rem;
   display:flex;
 }
 
-.vb-row--center {
-  justify-content:center;
-}
-
 /*
   Row Gutters
 */
@@ -45,17 +41,38 @@ $padding-lg: 2rem;
   margin-right:-$gutters-sm;
 }
 .vb-row--gutters-sm > .vb-col {
-  padding-left:$gutters-sm;
-  padding-right:$gutters-sm;
+  padding:$gutters-sm;
 }
 .vb-row--gutters-lg {
   margin-left:-$gutters-lg;
   margin-right:-$gutters-lg;
 }
 .vb-row--gutters-lg > .vb-col {
-  padding-left:$gutters-lg;
-  padding-right:$gutters-lg;
+  padding:$gutters-lg;
 }
+
+/*
+  Justify Columns
+*/
+.vb-row--justify-center {
+  justify-content:center;
+}
+.vb-row--justify-start {
+  justify-content:flex-start;
+}
+.vb-row--justify-end {
+  justify-content:flex-end;
+}
+.vb-row--justify-between {
+  justify-content:space-between;
+}
+.vb-row--justify-around {
+  justify-content:space-around;
+}
+.vb-row--justify-evenly {
+  justify-content:space-evenly;
+}
+
 
 /*
   Column base

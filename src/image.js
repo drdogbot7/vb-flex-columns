@@ -14,10 +14,10 @@ import classnames from 'classnames';
  * WordPress dependencies
  */
 const { __ } = wp.i18n; // '@wordpress/i18n';
-const { Component, Fragment } = wp.element;
+const { Fragment } = wp.element;
 const { registerBlockType } = wp.blocks;
 
-const { Toolbar, ToggleControl, SelectControl, PanelBody } = wp.components;
+const { SelectControl, PanelBody } = wp.components;
 
 const {
 	InnerBlocks,
@@ -26,7 +26,7 @@ const {
 
 registerBlockType( 'vb/flex-img', {
 	title: __( 'Flex Image' ),
-	icon: 'image',
+	icon: 'format-image',
 	category: 'common',
 	keywords: [ __( 'Image' ), __( 'Flexbox' ), __( 'Columns' ) ],
 	parent: [ 'vb/flex-row' ],
