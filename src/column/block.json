@@ -28,12 +28,10 @@
 			"enum": ["ltr", "rtl"]
 		},
 		"width": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		},
 		"widthSm": {
-			"type": "string",
-			"default": null
+			"type": "string"
 		},
 		"widthMd": {
 			"type": "string",

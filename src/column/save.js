@@ -27,14 +27,13 @@ const save = ( { attributes } ) => {
 		'background-color',
 		backgroundColor
 	);
-	const className = classnames(
-		'vb-col',
-		{ [ `vb-col--pad-${ padding }` ]: padding },
-		{ [ `vb-col--w-${ width }` ]: width },
-		{ [ `sm:vb-col--w-${ widthSm }` ]: widthSm },
-		{ [ `md:vb-col--w-${ widthMd }` ]: widthMd },
-		{ 'vb-col--center': verticalCenter }
-	);
+	const className = classnames( 'vb-col', {
+		[ `vb-col--pad-${ padding }` ]: padding,
+		[ `vb-col--w-${ width }` ]: width,
+		[ `sm:vb-col--w-${ widthSm }` ]: widthSm,
+		[ `md:vb-col--w-${ widthMd }` ]: widthMd,
+		'vb-col--center': verticalCenter,
+	} );
 	const innerClassName = classnames( 'vb-col__inner', {
 		'has-text-color': textColor || customTextColor,
 		'has-background': backgroundColor || customBackgroundColor,
