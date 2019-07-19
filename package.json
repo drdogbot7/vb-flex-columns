@@ -8,10 +8,10 @@
     "eject": "cgb-scripts eject"
   },
   "dependencies": {
-    "cgb-scripts": "1.17.0",
+    "cgb-scripts": "1.18.1",
     "classnames": "^2.2.6"
   },
   "devDependencies": {
-    "prettier-eslint": "^8.8.2"
+    "prettier-eslint": "^9.0.0"
   }
 }

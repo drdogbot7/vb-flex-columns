@@ -1,0 +1,25 @@
+{
+	"name": "vb/flex-img",
+	"category": "common",
+	"attributes": {
+		"placeholder": {
+			"type": "string"
+		},
+		"width": {
+			"type": "string",
+			"default": null
+		},
+		"widthSm": {
+			"type": "string",
+			"default": null
+		},
+		"widthMd": {
+			"type": "string",
+			"default": "auto"
+		},
+		"objectFit": {
+			"type": "string",
+			"default": "cover"
+		}
+	}
+}

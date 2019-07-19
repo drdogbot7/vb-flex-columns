@@ -1,0 +1,51 @@
+{
+	"name": "vb/flex-column",
+	"category": "common",
+	"attributes": {
+		"align": {
+			"type": "string"
+		},
+		"textAlign": {
+			"type": "string"
+		},
+		"placeholder": {
+			"type": "string"
+		},
+		"textColor": {
+			"type": "string"
+		},
+		"customTextColor": {
+			"type": "string"
+		},
+		"backgroundColor": {
+			"type": "string"
+		},
+		"customBackgroundColor": {
+			"type": "string"
+		},
+		"direction": {
+			"type": "string",
+			"enum": ["ltr", "rtl"]
+		},
+		"width": {
+			"type": "string",
+			"default": null
+		},
+		"widthSm": {
+			"type": "string",
+			"default": null
+		},
+		"widthMd": {
+			"type": "string",
+			"default": "auto"
+		},
+		"padding": {
+			"type": "string",
+			"default": null
+		},
+		"verticalCenter": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

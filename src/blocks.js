@@ -9,6 +9,10 @@
  * Webpack is compiling as the input file.
  */
 
-import './row.js';
-import './column.js';
-import './image.js';
+//  Import CSS.
+import './style.scss';
+import './editor.scss';
+
+import './row/index.js';
+import './column/index.js';
+import './image/index.js';
