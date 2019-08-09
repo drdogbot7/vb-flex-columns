@@ -209,9 +209,21 @@ class ColumnBlock extends Component {
 				</InspectorControls>
 				<div className="vb-helper">
 					<b>FLEX COLUMN</b>
-					<span className="vb-hint">Mobile: <i>{ width === '' ? 'Not Set' : width }</i></span>
-					<span className="vb-hint">Tablet: <i>{ widthSm === '' ? 'Not Set' : widthSm }</i></span>
-					<span className="vb-hint">Desktop: <i>{ widthMd === '' ? 'Not Set' : widthMd }</i></span>
+					{ width !== null && width !== '' && (
+						<span className="vb-hint">
+							Mobile: <i> { width }</i>
+						</span>
+					) }
+					{ widthSm !== null && widthSm !== '' && (
+						<span className="vb-hint">
+							Tablet: <i> { widthSm }</i>
+						</span>
+					) }
+					{ widthMd !== null && widthMd !== '' && (
+						<span className="vb-hint">
+							Desktop: <i> { widthMd }</i>
+						</span>
+					) }
 				</div>
 				<div
 					className={ classnames( 'vb-col', {

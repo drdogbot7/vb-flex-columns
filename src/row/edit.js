@@ -53,6 +53,9 @@ const edit = function( props ) {
 					] }
 				/>
 			</InspectorControls>
+			<div className="vb-helper">
+				<b>FLEX ROW</b>
+			</div>
 			<div className={ '' }>
 				<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } template={ TEMPLATE } />
 			</div>

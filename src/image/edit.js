@@ -33,7 +33,7 @@ const edit = function( props ) {
 							} )
 						}
 						options={ [
-							{ value: null, label: 'None' },
+							{ value: '', label: 'None' },
 							{ value: 'cover', label: 'Cover' },
 							{ value: 'contain', label: 'Contain' },
 							{ value: 'scale-down', label: 'Scale Down' },
@@ -51,7 +51,7 @@ const edit = function( props ) {
 							} )
 						}
 						options={ [
-							{ value: null, label: 'Not Set' },
+							{ value: '', label: 'Not Set' },
 							{ value: 'cover', label: 'Auto' },
 							{ value: '1/4', label: 'One Fourth' },
 							{ value: '1/3', label: 'One Third' },
@@ -70,7 +70,7 @@ const edit = function( props ) {
 							} )
 						}
 						options={ [
-							{ value: null, label: 'Not Set' },
+							{ value: '', label: 'Not Set' },
 							{ value: 'auto', label: 'Auto' },
 							{ value: '1/4', label: 'One Fourth' },
 							{ value: '1/3', label: 'One Third' },
@@ -89,7 +89,7 @@ const edit = function( props ) {
 							} )
 						}
 						options={ [
-							{ value: null, label: 'Not Set' },
+							{ value: '', label: 'Not Set' },
 							{ value: 'auto', label: 'Auto' },
 							{ value: '1/4', label: 'One Fourth' },
 							{ value: '1/3', label: 'One Third' },
@@ -101,6 +101,12 @@ const edit = function( props ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
+			<div className="vb-helper">
+				<b>FLEX IMAGE</b>
+				{ ( width !== null && width !== '' ) && <span className="vb-hint">Mobile: <i> { width }</i></span> }
+				{ ( widthSm !== null && widthSm !== '' ) && <span className="vb-hint">Tablet: <i> { widthSm }</i></span> }
+				{ ( widthMd !== null && widthMd !== '' ) && <span className="vb-hint">Desktop: <i> { widthMd }</i></span> }
+			</div>
 			<div className={ classnames( 'vb-col' ) }>
 				<div className={ classnames( 'vb-col__inner' ) }>
 					<div className={ 'vb-col__image' }>
